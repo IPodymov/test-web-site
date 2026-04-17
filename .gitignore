@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+env/
+.env/
+.venv/
+ENV/
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+coverage.xml
+coverage.json
+htmlcov/
+
+# Local configuration
+.env
+.env.local
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generate reports & results
+reports/
+*.log
+*.pdf
+*.md
+!README.md
+!ANSWERS.md
+!docs/
+!docs/*.md
+
+# OS specific
+.DS_Store
+Thumbs.db
