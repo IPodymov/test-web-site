@@ -1,0 +1,205 @@
+/* CSS для PDF-отчета ========================================= */
+@page {
+  size: A4;
+  margin: 20mm;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  color: #333;
+  line-height: 1.5;
+  font-size: 11pt;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #1a202c;
+  page-break-after: avoid;
+}
+
+.cover-page {
+  height: 90vh; /* Почти полная страница для обложки */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.cover-page h1 {
+  font-size: 28pt;
+  margin-bottom: 0.2em;
+}
+
+.cover-page .subtitle {
+  font-size: 16pt;
+  color: #718096;
+  margin-bottom: 2em;
+}
+
+.cover-meta {
+  font-size: 12pt;
+  background: #f7fafc;
+  padding: 2em;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  border: 1px solid #e2e8f0;
+}
+
+.cover-meta table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cover-meta th {
+  text-align: left;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+  color: #4a5568;
+  font-weight: normal;
+}
+
+.cover-meta td {
+  padding-bottom: 0.5em;
+  font-weight: 500;
+}
+
+.score-badge {
+  font-size: 24pt;
+  font-weight: bold;
+  color: #fff;
+  background: #38a169;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 1em;
+}
+.score-badge.low {
+  background: #e53e3e;
+}
+.score-badge.medium {
+  background: #d69e2e;
+}
+
+.page-break {
+  page-break-before: always;
+}
+
+/* Сводная таблица ========================================= */
+table.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 10pt;
+}
+
+table.styled-table th,
+table.styled-table td {
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  text-align: left;
+}
+
+table.styled-table th {
+  background-color: #f7fafc;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+/* БОКС со статистикой ================================================= */
+.stats-grid {
+  display: flex;
+  gap: 15px;
+  margin: 2em 0;
+}
+.stat-box {
+  flex: 1;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 15px;
+  text-align: center;
+}
+.stat-box .num {
+  display: block;
+  font-size: 20pt;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.stat-box.passed .num {
+  color: #38a169;
+}
+.stat-box.failed .num {
+  color: #e53e3e;
+}
+.stat-box.skipped .num {
+  color: #d69e2e;
+}
+
+/* Ошибки ================================================= */
+.bug-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  page-break-inside: avoid;
+}
+
+.bug-header {
+  background: #f7fafc;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bug-title {
+  color: #e53e3e;
+}
+
+.bug-body {
+  padding: 15px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9pt;
+  background: #fafafa;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #a0aec0;
+}
+.bug-body span.error {
+  color: #e53e3e;
+}
+
+/* Ответы ANSWERS.md ================================================= */
+.answers-content pre {
+  background: #f7fafc;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  font-size: 9pt;
+  border: 1px solid #e2e8f0;
+}
+.answers-content code {
+  background: #f7fafc;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 90%;
+}
+.answers-content p,
+.answers-content li {
+  font-size: 11pt;
+  line-height: 1.6;
+}
